@@ -51,7 +51,7 @@ winex/
 
 3. Configure the database connection in `src/db.ts`:
    ```ts
-   const client = postgres('postgres<username>:<password>@<host>:<port>/<database>');
+   const client = postgres(`${process.env.DATABASE_URL}`);
    ```
 
 4. Start the backend server:
@@ -121,11 +121,6 @@ npm run dev
 To configure the database connection, create a `.env` file in the root of your project with the following variables:
 
 ```
-DB_USER=your_username
-DB_PASSWORD=your_password
-DB_HOST=your_host
-DB_PORT=your_port
-DB_NAME=your_database
 DATABASE_URL=postgres://your_username:your_password@your_host:your_port/your_database
 ```
 
